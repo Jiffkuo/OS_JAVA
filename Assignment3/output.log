@@ -1,0 +1,55 @@
+=============================
+Available Resource: 1
+Input: Id [has,  max]
+       0 [3, 9]
+       1 [2, 4]
+       2 [1, 5]
+       3 [2, 7]
+       4 [5, 15]
+Request Client: (Id:0)[3, 9]
+ ! Pending request ==> (Id:0)
+Available Resource: 1
+Request Client: (Id:1)[2, 4]
+ ! Pending request ==> (Id:1)
+Available Resource: 1
+Request Client: (Id:2)[1, 5]
+ ! Pending request ==> (Id:2)
+Available Resource: 1
+Request Client: (Id:3)[2, 7]
+ ! Pending request ==> (Id:3)
+Available Resource: 1
+Request Client: (Id:4)[5, 15]
+ ! Pending request ==> (Id:4)
+
+Unsafe state
+
+=============================
+Available Resource: 2
+Input: Id [has,  max]
+       0 [3, 9]
+       1 [2, 4]
+       2 [1, 5]
+       3 [2, 7]
+       4 [5, 15]
+Request Client: (Id:0)[3, 9]
+ ! Pending request ==> (Id:0)
+Available Resource: 2
+Request Client: (Id:1)[2, 4]
+Available Resource: 4
+Request Client: (Id:0)[3, 9]
+ ! Pending request ==> (Id:0)
+Available Resource: 4
+Request Client: (Id:2)[1, 5]
+Available Resource: 5
+Request Client: (Id:0)[3, 9]
+ ! Pending request ==> (Id:0)
+Available Resource: 5
+Request Client: (Id:3)[2, 7]
+Available Resource: 7
+Request Client: (Id:0)[3, 9]
+Available Resource: 10
+Request Client: (Id:4)[5, 15]
+Available Resource: 15
+
+Safe state!
+Decision path is (Id) 1 2 3 0 4 
